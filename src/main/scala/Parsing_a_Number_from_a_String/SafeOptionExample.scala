@@ -6,6 +6,7 @@ object SafeOptionExample {
     val str2 ="12a"
     println(str1.toIntOption)
     println(str2.toIntOption)
+    println("Surya")
   }
 
 }
