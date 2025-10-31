@@ -5,6 +5,8 @@ object List1 {
     val nums = List(1, 2, 3, 4)
     println(nums.head)
     println(nums.tail)
+
+
   }
 
 }

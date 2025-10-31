@@ -7,6 +7,9 @@ object Arraybuffer {
     buffer +=4
     buffer -=3
     println(buffer)
+
+    val set = Set(1,2,3,4,5)
+    println(set.contains(3))
   }
 
 }
