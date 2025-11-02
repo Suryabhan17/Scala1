@@ -7,10 +7,14 @@ object add {
    val c= for(n<-b) yield n+1
 
     println(c) */
-    val name=List("Ram","Shyam","Mohan")
+    /*val name=List("Ram","Shyam","Mohan")
     val marks=List(85,89,95)
     val d=name ::: marks
-    println(d)
+    println(d)*/
+
+    val a=List(1,2,3,4,5,6)
+    val square= a.map(x => x*2)
+    println(square)
 
   }
 }
