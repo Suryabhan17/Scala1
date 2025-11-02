@@ -41,6 +41,25 @@ object add {
     val b=a.distinct
     println(b) */
 
+    /* val a= List (2,4,6,8,10)
+    val b=a.map(x => x*x)
+    println(b) */
+
+   /* val a= List(1,2,3,4,5,6,7,8,9,10)
+    val b=a.reduce(_ + _)
+    println(b) */
+   /* val a=List("Surya","1","Ajeet","2","Manish","3","Vishal","4","Sangam","5","Deepak","6","Anshuman","7")
+    val b=List("A","A","A","B","A","B","A")
+    val c= a.groupBy(_.charAt(0))
+    println(c) */
+
+    val a=List(1,2,3,4,5,1,23,4,4,5,2)
+     println(a.distinct)
+
+
+
+
+
 
 
 
