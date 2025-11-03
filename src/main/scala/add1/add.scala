@@ -1,6 +1,36 @@
 package add1
 
 object add {
+
+ /* import scala.annotation.tailrec
+
+  val set = Set(1, 2, 3)
+
+  @tailrec
+  def multiplyAll(s: Set[Int], acc: Set[Int]): Set[Int] = {
+    if (s.isEmpty) acc
+    else {
+      val head = s.head
+      multiplyAll(s.tail, acc + (head * 10))
+    }
+  }
+
+  val result = multiplyAll(set, Set())
+  println(result) // Set(10, 20, 30) */
+/*
+  @scala.annotation.tailrec
+  def sumList[A](lst: List[A], acc: List[A] = Nil): List[A] =
+    if (lst.isEmpty) acc else sumList(lst.tail,  lst.head :: acc)
+
+  println(sumList(List(1, 2, 3, 4, 5)))
+   */
+@scala.annotation.tailrec
+def countChar(s: String, acc: Int = 0): Int =
+if (s.isEmpty) acc else countChar(s.tail, acc + 1)
+
+  println(countChar("hello"))
+
+
   def main(args: Array[String]): Unit = {
   /*  val a =List (1, 2, 3, 4, 5, 6, 7)
   val b=a.filter(_>4)
@@ -53,18 +83,39 @@ object add {
     val c= a.groupBy(_.charAt(0))
     println(c) */
 
-    val a=List(1,2,3,4,5,1,23,4,4,5,2)
+   /* val a=List(1,2,3,4,5,1,23,4,4,5,2)
      println(a.distinct)
+    */
+
+  /*  val a=List (1,2,3,4,5)
+    a.foreach( println)
+   */
+
+   /* val a=Set(1,2,3,4,5)
+    val b=a.map(_*10) */
+   // println(b)
+ // b.foreach(println)
+ //  a.foreach(x=> println(x*10))
 
 
+/*  val a=Map("1"->"2","2"->"3","3"->"4")
+    a.foreach { case (b,c) => println(s"$b and $c") }
+ */
+  /*  val a=Map("Surya"->"A","Shyam"->"A","Vishal"->"A","Tinku"->"A")
+    a.foreach{case (c ,b) => println(s"$c => $b")}
+*/
+   // val a= List(1,2,3,4,5,6,7)
+   // val b= for (n <- a if n%2==0 ){
+    //  println(s"$n is even number")
+  //  }
 
+   // a.foreach{n => if (n%2==0)
+  //    println(s"$n is even")
+  //  }
 
-
-
-
-
-
-
-
+  //  val fruits = List("banana", "peach", "lime", "pear", "cherry")
+  //  val newFruits=fruits.filter(f => f.length < 6 && f.startsWith("p"))
+   //   .map(_.capitalize)
+  //  println(newFruits)
   }
 }
