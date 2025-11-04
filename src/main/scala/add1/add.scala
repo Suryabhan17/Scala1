@@ -155,6 +155,18 @@ val a=List(1,2,3,4,5,6,7,8,9)
     println(d)
     println(da)
 
+
+    val as=List(1,2,3,4)
+    val ca=as.sliding(2).toList
+    val df=as.grouped(2).toList
+    println(df)
+    println(ca)
+    val t=as.splitAt(2)
+
+    println(t)
+    val f=as.mkString("")
+    println((f))
+
   //c.foreach(println)
   //  println(c)
      // println(c)
