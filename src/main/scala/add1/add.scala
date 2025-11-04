@@ -1,5 +1,7 @@
 package add1
 
+import scala.collection.mutable.ListBuffer
+
 object add {
 
  /* import scala.annotation.tailrec
@@ -125,7 +127,7 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
   //  val newFruits=fruits.filter(f => f.length < 6 && f.startsWith("p"))
    //   .map(_.capitalize)
   //  println(newFruits)
-  case class Student(name: String, marks: Int)
+ /* case class Student(name: String, marks: Int)
 
     val students = List(
       Student("Amit", 85),
@@ -134,7 +136,27 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
     )
 
     val sortedByMarks = students.sortBy(_.marks)
-    println(sortedByMarks)
+    println(sortedByMarks) */
+   // val a=ListBuffer(1,2,3,4,4,5,5,4)
+   // val b= List(1,2,3,4,5,6)
+   // val c=b.updated(1,50)
+  //  println(c)
+    //val b=a.distinct
+   // a.insert(0,20)
 
+
+   // val c=a.filterNot(x=> x==3 || x==1 || x!=2)
+    //println(a)
+  //  println(b)
+val a=List(1,2,3,4,5,6,7,8,9)
+    val d=a.filter(_%2==0)
+    val da=a.filter(_%2==1)
+  val c=  a.map(x => x%2==0)
+    println(d)
+    println(da)
+
+  //c.foreach(println)
+  //  println(c)
+     // println(c)
   }
 }
