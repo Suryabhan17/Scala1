@@ -24,11 +24,19 @@ object add {
 
   println(sumList(List(1, 2, 3, 4, 5)))
    */
+
+
 @scala.annotation.tailrec
 def countChar(s: String, acc: Int = 0): Int =
 if (s.isEmpty) acc else countChar(s.tail, acc + 1)
 
   println(countChar("hello"))
+
+  @scala.annotation.tailrec
+  def revStr(s: String, acc: String = ""): String =
+    if (s.isEmpty) acc else revStr(s.tail, s.head + acc)
+
+  println(revStr("scala"))
 
 
   def main(args: Array[String]): Unit = {
@@ -117,5 +125,16 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
   //  val newFruits=fruits.filter(f => f.length < 6 && f.startsWith("p"))
    //   .map(_.capitalize)
   //  println(newFruits)
+  case class Student(name: String, marks: Int)
+
+    val students = List(
+      Student("Amit", 85),
+      Student("Ravi", 92),
+      Student("Sita", 78)
+    )
+
+    val sortedByMarks = students.sortBy(_.marks)
+    println(sortedByMarks)
+
   }
 }
