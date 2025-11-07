@@ -18,7 +18,7 @@ object Tail_R {
     /*def A[B](n: List[B], acc: List[B]=Nil): List[B]=
       if(n.isEmpty) acc else A(n.tail,  n.head::acc)
       println(A(List(1,2))) */
-    println("NEW")
+  //  println("NEW")
 
     /*def A(n:Int): Int={
       @tailrec
@@ -113,6 +113,17 @@ object Tail_R {
  if (lst.isEmpty) acc else sumList(lst.tail, acc + lst.head)
 
   println(sumList(List(1, 2, 3, 4, 5))) */
+
+
+   /* @scala.annotation.tailrec
+    def reverseList[A](lst: List[A], acc: List[A] = Nil): List[A] =
+      if (lst.isEmpty) acc else reverseList(lst.tail, lst.head :: acc)
+
+    println(reverseList(List(1, 2, 3, 4)))
+
+    */
+
+
 
 
   }

@@ -150,9 +150,9 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
     //println(a)
   //  println(b)
    // println(c)
-  val a=List(1,2,3,4,5,6,7,8,9)
-    val c=  a.map(x => x%2==0)
-    println(c)
+ // val a=List(1,2,3,4,5,6,7,8,9)
+ //   val c=  a.map(x => x%2==0)
+  //  println(c)
 /*val a=List(1,2,3,4,5,6,7,8,9)
     val d=a.filter(_%2==0)
     val da=a.filter(_%2==1)
@@ -188,5 +188,21 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
     }
     println()
     student.foreach{case (a,b) => println(s"Name=$a and Score=$b")} */
+    import scala.concurrent.Future
+    import scala.concurrent.ExecutionContext.Implicits.global
+    import scala.util.{Success, Failure}
+
+    val f = Future {
+      Thread.sleep(1000)
+      30 + 20
+    }
+
+    f.onComplete {
+      case Success(value) => println(s"Success: $value")
+      case Failure(ex) => println(s"Error: ${ex.getMessage}")
+    }
+
+    println("Main program continues...")
+
   }
 }
