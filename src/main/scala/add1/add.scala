@@ -1,5 +1,6 @@
 package add1
 
+import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
 object add {
@@ -27,7 +28,7 @@ object add {
   println(sumList(List(1, 2, 3, 4, 5)))
    */
 
-
+/*
 @scala.annotation.tailrec
 def countChar(s: String, acc: Int = 0): Int =
 if (s.isEmpty) acc else countChar(s.tail, acc + 1)
@@ -38,7 +39,7 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
   def revStr(s: String, acc: String = ""): String =
     if (s.isEmpty) acc else revStr(s.tail, s.head + acc)
 
-  println(revStr("scala"))
+  println(revStr("scala")) */
 
 
   def main(args: Array[String]): Unit = {
@@ -137,18 +138,22 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
 
     val sortedByMarks = students.sortBy(_.marks)
     println(sortedByMarks) */
-   // val a=ListBuffer(1,2,3,4,4,5,5,4)
+  // val a=ListBuffer(1,2,3,4,4,5,5,4)
    // val b= List(1,2,3,4,5,6)
    // val c=b.updated(1,50)
   //  println(c)
     //val b=a.distinct
    // a.insert(0,20)
 
-
-   // val c=a.filterNot(x=> x==3 || x==1 || x!=2)
+  //  val c=a.filterNot(x=>  x==3 )
+  // val c=a.filterNot(x=> x==3 || x==1 || x!=4)
     //println(a)
   //  println(b)
-val a=List(1,2,3,4,5,6,7,8,9)
+   // println(c)
+ // val a=List(1,2,3,4,5,6,7,8,9)
+ //   val c=  a.map(x => x%2==0)
+  //  println(c)
+/*val a=List(1,2,3,4,5,6,7,8,9)
     val d=a.filter(_%2==0)
     val da=a.filter(_%2==1)
   val c=  a.map(x => x%2==0)
@@ -157,18 +162,99 @@ val a=List(1,2,3,4,5,6,7,8,9)
 
 
     val as=List(1,2,3,4)
-    val ca=as.sliding(2).toList
-    val df=as.grouped(2).toList
-    println(df)
-    println(ca)
-    val t=as.splitAt(2)
+    val a3=new StringBuilder
+     val p=as.addString(a3)
+    println(p)
+    val (a1 , a2)=as.partition(_>2)
+    println(a1)
+    println(a2)
+   // val ca=as.sliding(2).toList
+   // val df=as.grouped(2).toList
+   // println(df)
+   // println(ca)
+   // val t=as.splitAt(2)
 
-    println(t)
-    val f=as.mkString("")
-    println((f))
+   // println(t)
+   // val f=as.mkString("")
+   // println((f))
 
   //c.foreach(println)
   //  println(c)
      // println(c)
+
+   /* val student =Map("Amit"->85,"Surya"->95,"Tinku"->98)
+    for ((a,b)<-student){
+      println(s"Name $a and Score $b")
+    }
+    println()
+    student.foreach{case (a,b) => println(s"Name=$a and Score=$b")} */
+    import scala.concurrent.Future
+    import scala.concurrent.ExecutionContext.Implicits.global
+    import scala.util.{Success, Failure}
+
+    val f = Future {
+      Thread.sleep(1000)
+      30 + 20
+    }
+
+    f.onComplete {
+      case Success(value) => println(s"Success: $value")
+      case Failure(ex) => println(s"Error: ${ex.getMessage}")
+    }
+
+    println("Main program continues...")
+
+ */
+  /*  val a=List(1,2,3,4,5,6)
+  val ad=a.foldRight(2)(_+_)
+    val(d,c)=a.splitAt(3)
+    val as=a.grouped(2).toList
+    val ab=a.sliding(5).toList
+    println(ad)
+    println()
+    for((num,index )<-a.zipWithIndex){
+      println(s"Index=$index and Number=$num")
+    }
+    println()
+    a.iterator.foreach(println)
+    println()
+    println("sliding : "+ab)
+    println()
+    println("grouped : "+as)
+    println()
+    println(d)
+    println(c)
+
+   */
+      /*
+    val a=List(1,2,3,4,5,5)
+         val b= a.take(3)
+       val d=  a.drop(3)
+    println(d)
+    println(b)
+
+       */
+         //  val b=a.toString()
+      // println(s"${b+1}  add one element in this number ")
+     // val v=a.iterator
+     // val f=v.sum
+     //  println(f)
+
+      /* val b=a.map(_+1)
+       val c=for(n<-a ) yield n+1
+        a.foreach(x => println(x+1))
+      val d=a.filter(x => x % 2==0)
+      println(d)
+
+       */
+     /* val a = Map("India" -> "Delhi", "France" -> "Paris", "Japan" -> "Tokyo")
+       val g= a.map { case (s , b) => (s, b+2)}
+        println(s"Capital of $g")
+
+
+      */
+
+
   }
+
 }
