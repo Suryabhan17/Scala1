@@ -122,10 +122,21 @@ object Tail_R {
     println(reverseList(List(1, 2, 3, 4)))
 
     */
+    /*
+ // Factorial
+     def A(n:Int , acc: Int=1): Int =
+       if(n<=1) acc else A(n-1, acc * n)
+
+       println(A(5))
 
 
-
-
+     */
+    /*
+     def A(n:List[Int], acc : Int=0): Int=
+    if(n.isEmpty) acc else A(n.tail, acc +n.head)
+     println(A(List(1,2,3,4,5)))
+     
+     */
   }
 
 }

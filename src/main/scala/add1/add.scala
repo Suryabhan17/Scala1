@@ -182,7 +182,7 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
   //  println(c)
      // println(c)
 
-    val student =Map("Amit"->85,"Surya"->95,"Tinku"->98)
+   /* val student =Map("Amit"->85,"Surya"->95,"Tinku"->98)
     for ((a,b)<-student){
       println(s"Name $a and Score $b")
     }
@@ -204,5 +204,56 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
 
     println("Main program continues...")
 
+ */
+  /*  val a=List(1,2,3,4,5,6)
+  val ad=a.foldRight(2)(_+_)
+    val(d,c)=a.splitAt(3)
+    val as=a.grouped(2).toList
+    val ab=a.sliding(5).toList
+    println(ad)
+    println()
+    for((num,index )<-a.zipWithIndex){
+      println(s"Index=$index and Number=$num")
+    }
+    println()
+    a.iterator.foreach(println)
+    println()
+    println("sliding : "+ab)
+    println()
+    println("grouped : "+as)
+    println()
+    println(d)
+    println(c)
+
+   */
+      /*
+    val a=List(1,2,3,4,5,5)
+         val b= a.take(3)
+       val d=  a.drop(3)
+    println(d)
+    println(b)
+
+       */
+         //  val b=a.toString()
+      // println(s"${b+1}  add one element in this number ")
+     // val v=a.iterator
+     // val f=v.sum
+     //  println(f)
+
+      /* val b=a.map(_+1)
+       val c=for(n<-a ) yield n+1
+        a.foreach(x => println(x+1))
+      val d=a.filter(x => x % 2==0)
+      println(d)
+
+       */
+     /* val a = Map("India" -> "Delhi", "France" -> "Paris", "Japan" -> "Tokyo")
+       val g= a.map { case (s , b) => (s, b+2)}
+        println(s"Capital of $g")
+
+
+      */
+
   }
+
 }
