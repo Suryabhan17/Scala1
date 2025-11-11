@@ -247,13 +247,13 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
       println(d)
 
        */
-     /* val a = Map("India" -> "Delhi", "France" -> "Paris", "Japan" -> "Tokyo")
+      val a = Map("India" -> "Delhi", "France" -> "Paris", "Japan" -> "Tokyo")
        val g= a.map { case (s , b) => (s, b+2)}
         println(s"Capital of $g")
 
 
-      */
 
+     
 
   }
 
