@@ -1,10 +1,12 @@
 package Creating_a_Future
 
-import scala.concurrent.Future
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.util.{Success , Failure}
+
 
 object Create {
+
+  import scala.concurrent.Future
+  import scala.concurrent.ExecutionContext.Implicits.global
+  import scala.util.{Success, Failure}
   def main(args: Array[String]): Unit = {
    /* val f = Future {
      // println("Runnig task in background...")
@@ -92,7 +94,7 @@ object Create {
 
     */
 
-    val fast =Future { Thread.sleep(200);300}
+   /* val fast =Future { Thread.sleep(200);300}
     val slow=Future { Thread.sleep(1000); 200}
     val f= Future.firstCompletedOf(List(fast,slow))
 
@@ -100,6 +102,124 @@ object Create {
       case Success(v) => println(s"First completed value = $v")
     }
 
+    */
+
+    /*
+    // Creating a future
+   // import scala.concurrent.Future
+val f = Future {
+      println("Running task in background...")
+      Thread.sleep(1000)
+      10 +20
+    }
+    println("This will print immediately")
+
+     */
+    /*
+   val f=Future{
+     println("Calculating sum ....")
+
+     50 + 40
+
+   }
+    f.onComplete{
+      case Success(r) => println(s"Sum is : $r")
+      case Failure(e) => println(s"Error : ${e.getMessage}")
+    }
+    println("Main program continues.....")
+
+     */ /*
+    // onComplete (Callback)
+    val f=Future {
+      Thread.sleep(1000)
+      30+20
+    }
+    f.onComplete{
+      case Success(r) => println(s"Success: $r")
+      case Failure(e) => println(s"Error :${e.getMessage}")
+    }
+    println("Main program continues...")
+    */
+
+    /*
+    // Map Use transform
+    val f=Future {10 + 20}
+    val d= f.map(x => x*2)
+    println(d)
+    d.onComplete{
+      case Success (r) => println(s"Double Results : $r")
+      case Failure(e) => println(s"New error $e")
+    }
+
+     */
+/*
+    // flatMap Use
+
+    val f=Future { 10 }
+    val d=f.flatMap(x => Future {x * x})
+
+    d.onComplete {
+      case Success(v) => println(s"Squared : $v")
+    }
+    println("Success")
+
+ */
+
+  /*
+// match condition
+    val f = Future {
+      50
+    }
+
+    val filtered = f.filter(_ > 60)
+
+    filtered.onComplete {
+      case Success(v) => println(s"Valid: $v")
+      case Failure(e) => println(s"Filtered Out: $e")
+    }
+   println("Success")
+
+   */
+/*
+    // Recover and RecoverWith
+
+    val r=Future {10 / 0}
+    val s= r.recover {
+      case _: ArithmeticException => 0
+    }
+    s.onComplete{
+      case Success (d) => println(s"Recover Value: $d")
+
+    }
+    println("Run program")
+
+ */
+    /*
+      // Method Running...
+    def A(a: Int , b: Int ) : Future[Int] = Future {
+      println("Calculating in background...")
+      //Thread.sleep(1000)
+      a + b
+    }
+    A(10,50).onComplete {
+      case scala.util.Success(v) => println(s"Result : $v")
+      case scala.util.Failure(e) => println(s"Error: ${e.getMessage}")
+
+    }
+    println("Main thread continues...")
+
+     */
+    /*
+    def A(a:Int) : Future[Int]= Future {
+      // Thread.sleep(500)
+      a * 2
+    }.map(result => result + 10)
+    A(5).onComplete{
+      case scala.util.Success(v) => println(s"Value is: $v")
+    }
+    println("Success")
+
+     */
 
   }
 }
