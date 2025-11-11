@@ -220,6 +220,19 @@ val f = Future {
     println("Success")
 
      */
+def getUser(): Future[String] = Future {
+  "Suryabhan"
+}
 
+    def getGreeting(name: String): Future[String] = Future {
+      s"Hello, $name!"
+    }
+
+    val finalMessage = getUser().flatMap(name => getGreeting(name))
+
+    finalMessage.onComplete {
+      case scala.util.Success(msg) => println(msg)
+    }
+    println("new")
   }
 }
