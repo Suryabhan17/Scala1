@@ -18,7 +18,7 @@ object Tail_R {
     /*def A[B](n: List[B], acc: List[B]=Nil): List[B]=
       if(n.isEmpty) acc else A(n.tail,  n.head::acc)
       println(A(List(1,2))) */
-  //  println("NEW")
+    //  println("NEW")
 
     /*def A(n:Int): Int={
       @tailrec
@@ -60,7 +60,7 @@ object Tail_R {
     if (n == 0) acc else A(x, n - 1, acc * x)
 
     println(A(2, 5)) */
-  /*
+    /*
     def A(n:List[Int], acc:Int=0 ): Int =
       if (n.isEmpty) acc else A(n.tail, acc + (if (n.head % 2 == 0) 1 else 0))
       println(A(List(1, 2, 3, 4, 5, 6, 7, 8, 9)))
@@ -84,7 +84,6 @@ object Tail_R {
   */
 
 
-
     /*
     // Count String Number
     def A(n:String, acc : Int=0) : Int=
@@ -92,8 +91,7 @@ object Tail_R {
       println(A("Helloa")) */
 
 
-
-   /* // Count Space Remove
+    /* // Count Space Remove
     def A(n:String, acc: String=""): String =
     if(n.isEmpty) acc else A(n.tail, if(n.head==' ') acc else acc + n.head)
     println(A("H e l l o"))
@@ -115,7 +113,7 @@ object Tail_R {
   println(sumList(List(1, 2, 3, 4, 5))) */
 
 
-   /* @scala.annotation.tailrec
+    /* @scala.annotation.tailrec
     def reverseList[A](lst: List[A], acc: List[A] = Nil): List[A] =
       if (lst.isEmpty) acc else reverseList(lst.tail, lst.head :: acc)
 
@@ -137,6 +135,10 @@ object Tail_R {
      println(A(List(1,2,3,4,5)))
      
      */
+
+    def A(n: List[Int], acc: List[Int] =Nil ): List[Int] =
+      if(n.isEmpty) acc  else A(n.tail ,    n.head :: acc)
+    println(A(List(1,2,3,4,5)))
   }
 
 }
