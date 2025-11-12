@@ -247,13 +247,79 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
       println(d)
 
        */
+
+    /*
       val a = Map("India" -> "Delhi", "France" -> "Paris", "Japan" -> "Tokyo")
        val g= a.map { case (s , b) => (s, b+2)}
         println(s"Capital of $g")
 
 
+     */
 
-     
+
+
+
+
+
+
+
+
+
+
+
+   /* val a=Map("surya"->"1","surya1"->"2", "village"->"jhanga")
+         //val b=a.values
+ val c=a.filter{case (f, b) => b >=  "1" }
+      // println(d)
+    println(c)
+  val d= a.filter(x => x ._2 > "1")
+    println(d) */
+
+
+
+     // println(b)
+
+
+    // val a=Map("Math"->1,"Vishal"->5,"Village"->3)
+   // val b=a.map{ case (d,n)=>(d,n+1)}
+    // println(b)
+
+   // println(a("Vishal"))
+   // for ((d,b)<- a)
+    //  println(s"$d and $b")
+   // println(a.get("Math"))
+   //
+    // println((a.contains("surya")))
+   /*
+    val d=a.filter(_._2 > 3)
+    println(d)
+    val d1=a.filter{ case (v,k)=> k>2}
+    println(d1)
+
+    val products = Map("Pen" -> 10, "Book" -> 50, "Bag" -> 200)
+
+    val expensive = products.filter { case (item, price) => price > 40 }
+
+    println(expensive)
+
+    */
+  /*
+    val a=List(1,1,1,1,1,1)
+         val b=a.toIterator
+           val c=b.sum
+    println(c)
+
+   */
+    /*
+    val a=Map("surya"->45,"Vishal"->85,"Tinku"->89)
+   // println(a("Tinku"))
+    val c= a.filter{ case (d,b)=> b > 58}
+    println(c)
+
+     */
+
+
+
 
   }
 
