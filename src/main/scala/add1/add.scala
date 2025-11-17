@@ -1,5 +1,6 @@
 package add1
 
+import scala.annotation.tailrec
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
@@ -317,10 +318,104 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
     println(c)
 
      */
+   /*
+    val nums = List(1, 1, 2, 3, 4, 5)
+    val result = nums.take(3)
+    println(result)
+      val d=nums.toIterable
+         val f=d.max
+        println(f)
+
+    */
+   /*
+    val a=List(1,2,3,4,5,5,6)
+    //val d=a.toIterable
+    val g=a.sum
+    val f=a.reduce(_ + _)
+    println("Sum =" + g)
+    val d1= a.reverse
+    println("Reverse =" + d1)
+
+    println("Reduce =" + f)
+
+    */
+
+    /*
+    val a=List(1,2,3,4,5)
+       val b= a.map(_ + 1)
+    println(b)
 
 
+     */
+ /*
+    val a=Map("Surya"-> 45, "Surya1"->89,"Surya2"->89)
+      a.map{case(d1,d2)=> println(s"Name=$d1 is roll no:$d2")}
+    println()
+    val b= a.map{case ( d,f)=>(d,f)}
+    println(b)
+       println(a)
 
+  */
+   // val a=List(1,2,3,4,5,6) // k=2,3
+     /*
+    def A(n:List[Int], e:Int):Int={
+      @tailrec
+      def loop(x:List[Int],acc: Int=0):Int={
+        if(x.isEmpty) acc else loop(x.tail, if(x.head==e)x.head+acc else acc)
+      }
+      loop(n)
+    }
+    println(A(List(1,2,3,4,5),3))
 
+      */
+    /*
+    def A(n:List[Int]):List[Int]={
+      @tailrec
+      def loop(x:List[Int], acc:List[Int]=Nil): List[Int]={
+       // if(x.isEmpty) acc else loop(x.tail, if (x.head > acc.head ) x.head ::acc else acc)
+        if(x.isEmpty) acc
+        else if(x.head > acc.head)
+          loop(x.tail, x.head :: acc)
+        else
+          loop(x.tail, acc)
+      }
+      loop(n)
+    }
+    println(A(List(23,4,3,67,34)))
+
+     */
+/*
+    val a=List(1,2,3,4,5)
+      val d=a.fold(5)(_ + _)
+    println(d)
+
+ */
+    /*
+    val a =List("A","B","C","D")
+     val d=a.groupBy( _.charAt(0))
+    println(d)
+
+     */
+    /*
+    val a=List(List(1,2,3,4),List(3,4,5,6))
+    val d=a.flatten
+    val f=a.flatMap(x => x.map(y=> y + 1))
+    println(f)
+    println("New")
+      println(d)
+
+     */
+    val a=List(1,2,3,4)
+    val b=List("a","b","d")
+     val d=for(f <- a ) yield f :: b
+    val t=for(g <- b) yield g :: a
+    println(d)
+    println()
+    println(t)
+    //val d=a.zip(b)
+    //println(d)
   }
+
+
 
 }
