@@ -220,6 +220,8 @@ val f = Future {
     println("Success")
 
      */
+
+    /*
 def getUser(): Future[String] = Future {
   "Suryabhan"
 }
@@ -234,5 +236,94 @@ def getUser(): Future[String] = Future {
       case scala.util.Success(msg) => println(msg)
     }
     println("new")
+
+     */
+    /*
+    val f= Future {
+      println("Hello")
+      // Thread.sleep(2000)
+      10 + 50
+    }
+    println("World")
+
+     */
+
+
+    /*
+    val f=Future {
+      println("Hello")
+      //Thread.sleep(20)
+      10 + 50
+    }
+    f.onComplete {
+      case Success(result) => println(s"Result : $result")
+      case Failure(e) => println(s"Error : ${e.getMessage}")
+    }
+    println("World")
+
+     */
+     /*
+    val f=Future {
+      println("Calculating sum...")
+      50 + 60
+    }
+    f.onComplete {
+      case Success(r) => println(s"Sum is : $r")
+      case Failure(e) => println(s"Error : ${e.getMessage}")
+    }
+    println("Main program continues.....")
+
+      */
+   /*
+    val f=Future {10 + 50}
+    val d=f.map(_ * 2)
+    d.onComplete{
+      case Success(r) => println(s"New Result on Map : $r")
+      case Failure(e) => println(s"Error : ${e.getMessage}")
+
+    }
+    println("")
+
+    */
+      /*
+    val f= Future {10}
+    val c=f.flatMap(x => Future {x + x })
+    c.onComplete{
+      case Success(r) => println(s"Hello My World $r")
+    }
+    println()
+
+       */
+    /*
+    def A(a : Int , b:Int ): Future[Int]=Future{
+       println("Calculating in background")
+       Thread.sleep(1000)
+       a + b
+     }
+    A(10,50).onComplete{
+      case scala.util.Success(value) => println(s"Result : $value ")
+      case scala.util.Failure(e) => println(s"Error : ${e.getMessage}")
+    }
+    println("Main thread continue...")
+
+     */
+
+    def A(n: Int ): Future[Int]={
+      Future {
+       // Thread.sleep(500)
+        n * 2
+      }.map(x => x * 2)
+    }
+    A(5).onComplete{
+      case scala.util.Success(r) => println(s"result : $r")
+    }
+    println()
   }
 }
+
+
+
+
+
+
+

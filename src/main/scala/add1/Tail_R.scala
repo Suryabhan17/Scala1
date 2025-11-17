@@ -133,12 +133,226 @@ object Tail_R {
      def A(n:List[Int], acc : Int=0): Int=
     if(n.isEmpty) acc else A(n.tail, acc +n.head)
      println(A(List(1,2,3,4,5)))
-     
-     */
 
+     */
+    /*
     def A(n: List[Int], acc: List[Int] =Nil ): List[Int] =
       if(n.isEmpty) acc  else A(n.tail ,    n.head :: acc)
     println(A(List(1,2,3,4,5)))
+
+     */
+    /*
+    def A(n: List[Int], acc:List[Int]=Nil): List[Int]=
+      if (n.isEmpty) acc.reverse else A(n.tail, if(n.head % 2==0) n.head :: acc else acc)
+      println(A(List(1,2,3,4,5,6)))
+
+     */
+
+    /*
+    def A(n:List[Int] , acc: Int = 0): Int=
+    if(n.isEmpty) acc else A(n.tail, acc + n.head)
+    println(A(List(1,2,3,4)))
+
+     */
+     /*
+    def A(n:List[Int], acc: Int=0): Int=
+      if (n.isEmpty) acc else A(n.tail, acc + (if (n.head%2==0) 1 else 0 ) )
+      println(A(List(1,2,3,4,5,8)))
+
+      */
+    /*
+    def A(n:List[Int], acc:List[Int]=Nil):List[Int]=
+     if (n.isEmpty) acc  else A(n.tail, n.head :: acc)
+     println(A(List(1,2,3,4,5)))
+
+     */
+    /*
+      def A(n:List[Int], acc:Int=0): Int =
+     if (n.isEmpty) acc else A(n.tail, if(n.head>acc)n.head else acc)
+     println(A(List(21,34,56,78,54,85,23)))
+
+
+     */
+
+  /*
+    def countOccurrences(list: List[Int], element: Int): Int = {
+      @tailrec
+      def loop(lst: List[Int], acc: Int=0): Int = {
+        if (lst.isEmpty) acc
+        else loop(lst.tail , (if (lst.head == element) acc + 1 else acc ))
+
+      }
+
+      loop(list)
+    }
+
+
+    println(countOccurrences(List(1, 2, 2, 3, 2), 2)) // 3
+    println(countOccurrences(List(10, 20, 30, 20), 20)) // 2
+    println(countOccurrences(List(5, 5, 5, 5), 5)) // 4
+    println(countOccurrences(List(1, 2, 3), 10)) // 0
+
+   */
+
+    /*
+   def A(n:List[Int], e: Int): Boolean={
+     @tailrec
+     def loop(x:List[Int] ): Boolean={
+       if (x.isEmpty)  false else if(x.head == e) true  else  loop(x.tail)
+
+     }
+     loop(n)
+   }
+    println(A(List(10,20,30), 2))
+
+     */
+     /*
+    def A(n:List[List[Int]] ): List[Int]={
+      @tailrec
+      def loop(x:List[List[Int]], acc:List[Int]=Nil) : List[Int]={
+        if(x.isEmpty) acc.reverse else loop(x.tail, x.head.reverse ::: acc)
+      }
+      loop(n)
+    }
+
+    println(A(List(List(1, 2), List(3, 4)))) // List(1, 2, 3, 4)
+    println(A(List(List(10), List(), List(20, 30)))) // List(10, 20, 30)
+    println(A(Nil))
+
+      */
+      /*
+    def A(n:List[Int]):List[Int]={
+      @tailrec
+      def loop(x:List[Int],seen: Set[Int], acc: List[Int]=Nil):List[Int]={
+        if(x.isEmpty) acc.reverse else if(seen.contains(x.head)) loop( x.tail ,seen, acc)else loop(x.tail, seen + x.head ,  x.head :: acc)
+      }
+      loop(n,Set())
+    }
+    println(A(List(1,2,2,3,1)))
+
+       */
+  /*
+    def A(n:Map[String, Int]): Int={
+      @tailrec
+      def loop(v:List[Int], acc:Int=0): Int={
+        if(v.isEmpty) acc else loop(v.tail, acc + v.head)
+      }
+      loop(n.values.toList)
+    }
+
+    println(A(Map("a" -> 10, "b" -> 20, "c" -> 30))) // 60
+    println(A(Map("x" -> 5, "y" -> 15))) // 20
+    println(A(Map()))
+
+   */
+  /*
+    def A(n:List[List[Int]]):List[Int]={
+      @tailrec
+      def loop(x:List[List[Int]], acc:List[Int]=Nil):List[Int]={
+        if(x.isEmpty) acc.reverse else loop(x.tail, x.head.reverse ::: acc)
+      }
+      loop(n)
+    }
+    println(A(List(List(1,2,3),List(4,5,6))))
+
+   */
+   /*
+    def A(n:List[Int]):Int={
+      @tailrec
+      def loop(x:List[Int], acc: Int=1): Int={
+        if (x.isEmpty) acc else loop(x.tail, x.head * acc)
+      }
+      loop(n)
+    }
+    println(A(List(2,4,3)))
+
+    */
+    /*
+    def A(n:List[Int]):Int={
+      @tailrec
+      def loop(x:List[Int], acc: Int=0,a:Int=Int.MinValue): Int={
+        if(x.isEmpty) acc else loop(x.tail, acc +(if (x.head==a) 0 else 1) )
+      }
+      loop(n)
+    }
+    println(A(List(1,2,0,3,4,8,-2)))
+
+     */
+
+
+    /*
+    def A(n:List[Int]): List[Int]={
+      @tailrec
+      def loop(x:List[Int], acc: List[Int]=Nil):List[Int]={
+        if(x.isEmpty) acc.reverse else loop(x.tail, if(x.head%2==0)x.head :: acc else acc )
+      }
+      loop(n)
+    }
+    println(A(List(1,2,3,4,5,6,7,8,9,10)))
+
+
+     */
+    /*
+    def A(n:List[List[Int]]):List[Int]={
+      @tailrec
+      def loop(x:List[List[Int]],acc:List[Int]=Nil): List[Int]={
+        if(x.isEmpty) acc.reverse else loop(x.tail, x.head.reverse ::: acc)
+      }
+      loop(n)
+    }
+    println(A(List(List(1,2,3,4),List(6,5,6,7))))
+
+
+     */
+
+
+
+    /*
+
+
+
+    def A(n:List[Int]): Int={
+      @tailrec
+      def loop(x:List[Int], acc: Int=0):Int={
+        if(x.isEmpty) acc else loop(x.tail, acc +(if(x.head%2==0) 1 else 0))
+      }
+      loop(n)
+    }
+    println(A(List(1,2,3,4,5,6,7,8,9,10)))
+
+
+     */
+
+/*
+    def A(n:List[Int]): List[Int]={
+      @tailrec
+      def loop(x:List[Int], acc:List[Int]=Nil): List[Int]={
+        if(x.isEmpty) acc else loop(x.tail, x.head :: acc)
+      }
+      loop(n)
+    }
+    println(A(List(1,2,3,4,5)))
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
   }
+
+
+
+
+
+
+
 
 }
