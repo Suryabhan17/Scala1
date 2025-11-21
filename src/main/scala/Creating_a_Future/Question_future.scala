@@ -629,7 +629,7 @@ println("")
     println(a)
 
      */
-      /*
+
     val a:Future[Int]=Future{
        println("Surya")
        10 + 50
@@ -640,7 +640,7 @@ println("")
     }
    // println("Start Future...")
 
-       */
+
 
 
 
