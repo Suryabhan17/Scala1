@@ -511,7 +511,7 @@ println("")
       */
 
 
-
+      /*
     val f1 = Future(50)
     val f2 = Future(30)
     val f3 = Future(20)
@@ -523,6 +523,128 @@ println("")
     } println(a+b+c)
 
    println()
+
+       */
+
+    /*
+      val f = Future { 10 }
+
+    val chained = f.flatMap(x => Future { x * x })
+
+    chained.onComplete {
+      case Success(v) => println(s"Squared: $v")
+    }
+  println("Surya")
+
+     */
+      /*
+    val a=List(1,2,3,4,5)
+    val b= a.map(x => Future { x + 1})
+    val d=Future.sequence(b)
+    d.onComplete{
+      case Success(r) => println(s"$r")
+    }
+    println(" Start Future")
+   */
+
+
+
+    /*
+    val a= Future{ 50}
+    val b=a.map(_ + 1)
+    b.onComplete{
+      case Success(r)=> println(r)
+    }
+    println("Start Future .....")
+
+     */
+
+    /*
+       val f=55
+       val a= Future {f}
+      val b= a.flatMap(x=> Future{x*x})
+      b.onComplete{
+        case Success(r) =>  println(r)
+      }
+       println(" Start Future.....")
+
+     */
+     /*
+    def sumList(num: List[Int]): Future[Int] = Future {
+      num.sum
+    }
+
+    sumList(List(10,20,30,40)).foreach(println)
+
+
+     println("Start Future ")
+
+
+      */
+    /*
+    def A(s:List[List[Int]]): List[Int]={
+      @tailrec
+      def loop(x:List[List[Int]], acc: List[Int]=Nil): List[Int]={
+        if(x.isEmpty) acc.reverse else loop(x.tail, x.head.reverse ::: acc)
+      }
+      loop(s)
+    }
+    println(A(List(List(1,2,3),List(4,5))))
+
+     */
+    /*
+ def A(x: Int) : Future[Int]=Future{
+       x + 2
+     }.map(x=> x + 12)
+    A(5).onComplete{
+      case scala.util.Success(v)=> println(v)
+    }
+    println(" Start Future.....")
+
+     */
+    /*
+    def A(a: Int, b: Int) : Future[Int]= Future{
+      a +b
+    }
+    A(5,5).onComplete{
+      case scala.util.Success(v) => println(v)
+      case scala.util.Failure(e) => println(e)
+    }
+    println("Start Future.....")
+
+     */
+    /*
+    def A(x:List[List[Int]]) : List[Int]={
+      @tailrec
+      def loop(d:List[List[Int]], acc: List[Int]=Nil): List[Int]={
+        if (d.isEmpty) acc.reverse else loop(d.tail, d.head.reverse ::: acc)
+      }
+      loop(x)
+    }
+    println(A(List(List(1,2,3),List(4,5,6))))
+
+     */
+    /*
+    val a= 1::2 ::3:: Nil
+    println(a)
+
+     */
+      /*
+    val a:Future[Int]=Future{
+       println("Surya")
+       10 + 50
+     }
+    a.onComplete{
+      case Success(v) => println(s"v: ${v}")
+      case Failure(e)=> println(e)
+    }
+   // println("Start Future...")
+
+       */
+
+
+
+
 
   }
 
