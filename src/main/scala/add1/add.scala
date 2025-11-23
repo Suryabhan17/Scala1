@@ -414,6 +414,7 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
     println(t)
     //val d=a.zip(b)
     //println(d)
+
   }
 
 

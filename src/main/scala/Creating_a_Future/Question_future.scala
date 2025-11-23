@@ -2,11 +2,14 @@ package main.scala.Creating_a_Future
 
 import scala.annotation.tailrec
 import scala.concurrent.blocking
+import scala.concurrent.{Await, Future}
+import scala.concurrent.duration
+import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.util.{Success, Failure}
 
 object Question_future {
-  import scala.concurrent.Future
-  import scala.concurrent.ExecutionContext.Implicits.global
-  import scala.util.{Success, Failure}
+
   def main(args: Array[String]): Unit = {
 
     /*
@@ -642,13 +645,77 @@ println("")
 
 
    */
+   /*
+     val a=List(1,2,34,4)
+    val b=a.map(x=> Future(x + 1))
+    val d= Future.sequence(b)
+     d.onComplete{
+       case Success(r)=> println(s"Result : $r")
+     }
+    d.foreach(println)
+     println("Start Future....")
 
 
 
+    */
+    /*
+     println(" ")
+     val a=List(12,3,4,5)
+    val b=Future.traverse(a){
+      n => Future { n + 0}
+
+    }
+
+    b.foreach(println)
+    print("Hello")
+
+     */
+/*
+    object HelloActor:
+
+    def apply(): Behavior.Receive[String] =
+      Behaviors.receive { (ctx, msg) =>
+        println(s"Received: $msg")
+        Behaviors.same
+      }
+
+    @main def testAkka(): Unit =
+    val system = ActorSystem(HelloActor(), "Hello")
+    system ! "Hello Akka"
 
 
 
+ */
 
+
+    /*
+
+    import akka.actor.typed.ActorSystem
+    import akka.actor.typed.scaladsl.Behaviors
+
+    object HelloActor
+      def apply(): Behaviors.Receive[String] =
+        Behaviors.receive { (ctx, msg) =>
+          println(s"Received message: $msg")
+          Behaviors.same
+        }
+
+    @main def testAkka(): Unit =
+      val system = ActorSystem(HelloActor(), "HelloSystem")
+      system ! "Hello Akka"
+
+
+     */
+class MyThread extends Thread {
+      override def run() : Unit={
+        for (i <- 1 to 5)
+          println(i)
+      }
+    }
+     def testThread () : Unit={
+      val t=new MyThread()
+      t.start()
+    }
 
   }
 
