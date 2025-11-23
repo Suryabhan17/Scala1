@@ -716,6 +716,8 @@ class MyThread extends Thread {
       val t=new MyThread()
       t.start()
     }
+    for (i <- 1 to 4)
+      println(i)
 
   }
 
