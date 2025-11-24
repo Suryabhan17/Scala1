@@ -706,18 +706,134 @@ println("")
 
 
      */
+    /*
 class MyThread extends Thread {
       override def run() : Unit={
-        for (i <- 1 to 5)
-          println(i)
+       // for (i <- 1 to 5)
+         // println(i)
+        println("Hello My Friend")
       }
     }
-     def testThread () : Unit={
-      val t=new MyThread()
-      t.start()
+   //  def testThread () : Unit={
+    def lambdaThread() : Unit ={
+    /  val t=new MyThread()
+  //    t.start()
+//    }
+    //for (i <- 1 to 4)
+     // println(i)
+
+     */
+
+
+    /*
+
+    class Worker(name: String) extends Thread {
+      override def run(): Unit = {
+        for (i <- 1 to 3)
+          println(s"$name working: $i")
+      }
     }
-    for (i <- 1 to 4)
-      println(i)
+
+     def multiThread(): Unit = {
+      val t1 = new Worker("Thread-1")
+      val t2 = new Worker("Thread-2")
+      val t3 = new Worker("Thread-3")
+
+      t1.start()
+      t2.start()
+      t3.start()
+    }
+
+
+     */
+
+/*
+    class MyRunnable extends Runnable {
+      override def run(): Unit = {
+        Thread.sleep(1000)
+        println("Thread running...")
+      }
+    }
+
+     def testRunnable(): Unit = {
+      val th = new Thread(new MyRunnable())
+      th.start()
+      th.join()
+    }
+
+
+ */
+  /*
+   val  f1=Future {10}
+   val f2= f1.transform {
+     case Success(v) => Success(v + 1)
+
+     case Failure(e) => Failure(new Exception("Error"))
+   }
+    f2.foreach(println)
+    println("Surya")
+
+
+
+
+   */
+     /*
+    object Counter {
+      var a= 0
+      def increment() : Unit = this.synchronized{
+        a=a+1
+      }
+
+    }
+    println("String")
+
+
+      */
+    /*
+
+    val a=Future {10/0}
+    val b=a.andThen {
+      case Success(r) => println(r)
+      case Failure(e) => println(s"${e.getMessage}")
+    }
+    b.foreach(println)
+    println("Starting")
+
+     */
+    /*
+    val a=Future{10/0}
+    val b=Future{20}
+    val c=a fallbackTo b
+    c.foreach(println)
+    println("Starting Future...")
+
+
+     */
+
+    /*
+
+    val a=Future {19}
+    val b=a.collect{
+      case x if x> 5 => println("Success")
+    }
+    b.foreach(println)
+    println("Starting Future...")
+
+     */
+
+    class A {
+      def show(): Unit = println("Inside A")
+    }
+
+    class B extends A {
+      override def show(): Unit = println("Inside B")
+    }
+
+     def testOverride(): Unit = {
+      val obj: A = new B()
+      obj.show() // Inside B
+    }
+  println("Starting ......")
 
   }
 
