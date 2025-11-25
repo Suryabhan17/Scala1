@@ -292,7 +292,7 @@ object Question_future {
       case Success(r)=> println(s"Sum of 1 to 1000000 = $r")
       case Failure(e) => println(s"Error : ${e.getMessage}")
     }
-    println("Main thread running in parallel..")
+    println("Main thread running in parallel....")
 
      */
 
@@ -696,7 +696,7 @@ println("")
     object HelloActor
       def apply(): Behaviors.Receive[String] =
         Behaviors.receive { (ctx, msg) =>
-          println(s"Received message: $msg")
+          println(s" message: $msg")
           Behaviors.same
         }
 
@@ -820,7 +820,7 @@ class MyThread extends Thread {
     println("Starting Future...")
 
      */
-
+       /*
     class A {
       def show(): Unit = println("Inside A")
     }
@@ -834,6 +834,125 @@ class MyThread extends Thread {
       obj.show() // Inside B
     }
   println("Starting ......")
+  
+
+
+
+        */
+
+   /*
+      class A extends Thread{
+      override def run() : Unit ={
+        for ( i <- 1 to 5 )
+          println(i)
+        println("Surya")
+      }
+
+    }
+    def testThread() : Unit ={
+      val a=new A()
+
+      a.start()
+    }
+    println("Start Thread")
+     testThread()
+
+
+    */
+
+  /*
+    class A extends Runnable {
+      override def run() : Unit ={
+        println("Surya")
+      }
+
+    }
+    def testRunnable () : Unit ={
+      val a=new Thread(new A())
+      a.start()
+    }
+    testRunnable()
+
+
+   */
+   /*
+class A extends Runnable{
+  override def run() : Unit ={
+    for (i<- 1 to 5)
+      println(i)
+  }
+}
+    def lambdaThread() : Unit={
+      val a= new Thread(()=> println("Surya"))
+      a.start()
+    }
+    lambdaThread()
+    def testRunnable () : Unit ={
+      val d=new Thread(new A())
+      d.start()
+    }
+    testRunnable()
+
+    */
+
+    /*
+ class A {
+    def sound() : Unit= println("Animal sound")
+  }
+    class dog extends A {
+      override def sound() : Unit= println("Dog sound")
+    }
+    class cat extends A{
+      override def sound() : Unit=println("cat sound")
+    }
+
+    def Result() : Unit ={
+      val a: A=new dog()
+      val b: A=new cat()
+      a.sound()
+      b.sound()
+    }
+    Result()
+
+     */
+     /*
+    class A {
+      def Student() : Unit = println("Name")
+    }
+
+     class B extends A {
+       override def Student() : Unit=println("Suryabhan Singh")
+     }
+    class C extends A {
+      override def Student() : Unit=println("Ajeet Singh")
+    }
+    class D extends A {
+      override def Student() : Unit =println("Vishal Singh")
+    }
+
+    def Result() : Unit={
+      val a: A =new A()
+      val b: A=new B()
+      val c: A=new C()
+      a.Student()
+      b.Student()
+      c.Student()
+    }
+    Result()
+
+
+      */
+      /*
+    val t = new Thread(() => {
+      println("Start")
+      Thread.sleep(1000)
+      println("End")
+    })
+    t.start()
+
+
+       */
+
 
   }
 
