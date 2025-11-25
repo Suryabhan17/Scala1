@@ -952,8 +952,47 @@ class A extends Runnable{
 
 
        */
+    /*
+class A(name : String) extends Thread{
+      override def run() : Unit={
 
+        for(i <- 1 to 5)
+         //println(i)
+        print(name + " "+" " + i)
+      }
+    }
+    def Result() : Unit ={
+      val a=new A("Surya")
+      val b=new A("Singh")
+      val c=new A("Ajit")
+      a.start()
+      b.start()
+      c.start()
+    }
+Result()
 
+     */
+/*
+val a=Future{
+  println("Suryabhan")
+  10 + 52
+}
+    a.onComplete {
+      case Success(r)=> println(r)
+    }
+    println("")
+
+ */
+
+    class A {
+      private var count=0
+      def increment() : Unit =synchronized {
+        count = count + 1
+      }
+        def get() : Int =count
+
+    }
+    println("")
   }
 
 }
