@@ -405,6 +405,7 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
       println(d)
 
      */
+    /*
     val a=List(1,2,3,4)
     val b=List("a","b","d")
      val d=for(f <- a ) yield f :: b
@@ -414,6 +415,9 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
     println(t)
     //val d=a.zip(b)
     //println(d)
+
+
+     */
 
   }
 
