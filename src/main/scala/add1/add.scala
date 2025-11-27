@@ -1,8 +1,20 @@
 package add1
 
+import javax.sound.midi.Receiver
 import scala.annotation.tailrec
 import scala.collection.mutable
+import scala.concurrent.Future
 import scala.collection.mutable.ListBuffer
+import scala.concurrent.{ExecutionContext, Future}
+import ExecutionContext.Implicits.global
+import scala.util.Success
+import scala.util.Failure
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.duration._
+import scala.concurrent.Await
+//import akka.actor.typed.ActorSystem
+//import akka.actor.typed.scaladsl.Behaviors
+
 
 object add {
 
@@ -418,8 +430,219 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
 
 
      */
+    /*
+    def Result () : Unit={
+      val t=new Thread(()=>{
+        println("Suryabhan Singh")
+        val a=for(i<- 1 to 10) yield i * i
+        val c=a.filter(_%4==0)
+        val d=a.filter(_%4==1)
+        println(s"Square Root Number 1 to 10 : $a")
+        println(s"Divided 4 : $c")
+        println(s"Not Divided 4 : $d")
 
+
+      })
+      t.start()
+
+    }
+    Result()
+
+     */
+
+
+       /*
+    def Result() : Unit ={
+      val t=new Thread (()=>{
+        Thread.sleep(2000)
+        println("child done")
+      })
+      t.start()
+      t.join()
+      println("main after join")
+    }
+    Result()
+
+        */
+
+    /*
+  var x=0
+    def Result(): Unit={
+      val a=new Thread(()=>for(_ <- 1 to 1000) x += 1)
+      val b=new Thread(()=> for (_ <- 1 to 1000 ) x +=1)
+      a.start() ; b.start()
+      a.join() ; b.join()
+      println(x)
+
+    }
+Result()
+
+     */
+/*
+     var x=0
+    val lock =new Object
+    def g(): Unit =lock.synchronized{ x += 1}
+    def Result() : Unit ={
+      val t1=new Thread(()=> for(_ <- 1 to 1000) g ())
+      val t2=new Thread(()=> for(_ <- 1 to 1000)g())
+      t1.start(); t1.join()
+      t2.start(); t2.join()
+      println()
+
+    }
+
+
+ */
+   /*
+    val a= Future {20}
+    val b= a andThen{
+      case Success(v)=> println(v)
+      case Failure(e)=> println(e)
+    }
+    println("Start")
+
+    */
+    /*
+    val a=Future{12}
+    val b=Future{45}
+    val c=for {
+      d<-a
+      f<-b
+    } yield d + f
+    c.foreach(println)
+    println(" surya")
+
+
+     */
+    /*
+     val a: List[Future[List[Future[List[Int]]]]] =
+      List(
+        Future.successful(
+          List(
+            Future.successful(List(1, 2, 3)),
+            Future.successful(List(4, 5))
+          )
+        ),
+        Future.successful(
+          List(
+            Future.successful(List(6)),
+            Future.successful(List(7, 8))
+          )
+        )
+      )
+     val b=Future.sequence(a)
+
+
+   // val c=b.map(_ + 1)
+   // c.foreach(println)
+
+     */
+    /*
+    val a=Future[Int]{50}
+    a.onComplete{
+      case Success(r)=> println(r)
+      case Failure(e)=> println(s"${e.getMessage}")
+    }
+    println("Start")
+
+     */
+/*
+   def Result()  ={
+     val f=Future{
+       Thread.sleep(500)
+       10 + 50
+     }
+     val a=Await.result(f, 1.second)
+     println(a)
+   }
+   Result()
+
+
+ */
+    /*
+
+    def demo() ={
+      val f=Future {
+        Thread.sleep(500)
+        50 + 60
+      }
+      val a=Await.ready(f,2.second)
+      println(a)
+    }
+    demo()
+
+     */
+     /*
+    class hello extends Actor {
+      def receiver : Receiver ={
+        case "hello"=> println("Surya")
+        case msg => println(msg)
+      }
+
+      */
+    /*
+    def demo() ={
+      val f=Future {
+        Thread.sleep(500)
+        50 + 60
+      }
+      val a=Await.result(f,1.second)
+      println(a)
+    }
+    demo()
+
+     */
+    /*
+    val a=Future {
+      Future{2}
+    }
+    val d=a.flatten
+    d.onComplete{
+      case Success(r)=> println(r)
+      case Failure(e)=> println(e)
+    }
+    println("Starting.....")
+
+
+     */
+    /*
+    val a=Future{5}
+      val d=a.andThen {
+        case Success(v)=>println(v)
+        case Failure(e)=>println(e)
+      }
+    d.foreach(println)
+    println("Start")
+
+     */
+    /*
+
+    val a=Future {50}
+    val b=Future{60}
+    val c=Future{40}
+    val d=for {
+      i <- a
+      j <- b
+      k <- c
+
+    } yield(i + j + k)
+    d.map(println)
+    println("Staring")
+    //println(d)
+
+
+
+    //}
+
+
+     */
+    val a =45
+    val b =45
+  val c= for (i <- List(a) ; j <- List(b) ) yield (i + j)
+
+    println(c)
   }
+
 
 
 
