@@ -148,8 +148,6 @@ if (s.isEmpty) acc else countChar(s.tail, acc + 1)
    // val c=a.filterNot(x=> x==3 || x==1 || x!=2)
     //println(a)
   //  println(b)
-
-    /*
 val a=List(1,2,3,4,5,6,7,8,9)
     val d=a.filter(_%2==0)
     val da=a.filter(_%2==1)
@@ -172,8 +170,5 @@ val a=List(1,2,3,4,5,6,7,8,9)
   //c.foreach(println)
   //  println(c)
      // println(c)
-
-     */
-
   }
 }
