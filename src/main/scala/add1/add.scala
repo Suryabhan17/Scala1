@@ -866,6 +866,7 @@ Result()
     println(a)
 
           */
+      /*
        trait A {
 
        def a( name:String):Unit=println(s"$name")
@@ -876,8 +877,119 @@ Result()
      val p= new B()
       println( p.a("Surya"))
        p.aa(45)
+
+
+
+
 }
 
+
+       */
+
+      /*
+     class A(val name:String , val Age: Int)
+   class Ba( a:String ,  b:Int , name:String , Age: Int) extends A(name , Age)
+        val p=new  A("Surya",56)
+         val g=new Ba("Surya1" ,89, "Surya5", 78)
+         println(g.name)
+        println(p.name)
+
+       */
+    /*
+    class A(val name:String,val age:Int)
+    object A {
+      def unapply(p:A) : Option[(String , Int)]=
+        Some((p.name , p.age))
+    }
+     val t=new A("Surya", 45)
+     t match {
+       case A(x, y) => println(s"Name : $x and Age : $y")
+     }
+
+     */
+    /*
+    sealed trait A
+    case class Card(number:String) extends A
+    case class Case(amount: Int) extends  A
+    case class UPI() extends A
+    def B(p : A) : Unit= p match {
+      case Card(r) => println(r)
+      case Case(y)=> println(y)
+      case UPI() => println()
+    }
+     B(Card("458213"))
+     B(Case(4589))
+
+
+     */
+
+      /*
+      trait A {
+        def sound(name:String): Unit=println(s"Name : $name")
+      }
+      trait B {
+        def Ab(age:Int):Unit=println(s"Age: age")
+      }
+    class C extends A with B{
+      def ab(city:String) : Unit=println(s"City : $city")
+    }
+    val p=new C()
+        p.sound("Surya")
+      p.ab("noida")
+    p.Ab(45)
+
+       */
+    /*
+    class A private() {
+        def ab(name:String): Unit=println(s"Name : $name")
+      }
+        object A {
+          private val a=new A()
+          def getb() : A = a
+        }
+    val p= A.getb()
+       p.ab("Suryabhan")
+
+     */
+     /*
+    case class S (name:String , age:Int)
+        val p= S("Surya",45)
+    println(p)
+         val s=List(p)
+    println(s)
+         val t=s.map(_. age >18)
+       println(t)
+
+      */
+       /*
+    case class T(age:Int)
+    val p=T(45)
+    println(p)
+    val t=p.copy(89)
+    println(t)  
+    
+        */
+       /*
+    class A private(val name:String , val age: Int) {
+        def a(name:String , age: String) : Unit=println(s"Name : $name and Age : $age")
+      }
+         object A {
+           def aa(name:String , age : Int) : A = new A(name , age)
+         }
+       val t=new A("Surya" , 12)
+       t.a()
+        val p= A.aa("Surya" , 45)
+         println(p.name +" and " + p.age)  
+         
+        */
+      class A protected(val name: String , val age: Int) {
+        def a() : Unit = println (s"Surya")
+      }       
+       object  A {
+            def av(name:String , age: Int) : A=new A(name , age)
+       }
+           val p=A.av("Surya" , 25)
+       println(p.name + " and " + p.age)
   }
 
 
