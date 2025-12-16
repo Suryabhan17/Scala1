@@ -260,7 +260,7 @@ object Traits1 {
     println(p.age)   
      
      */
-    
+      /*
     trait A {
       println("A")
     }
@@ -273,7 +273,25 @@ object Traits1 {
     class D extends C {
       println("D")
     }
-    val p=new D()
+    val p=new D()  
+    
+       */
+    
+    
+    trait Ajeet {
+      println("mera name  ajeet hai \n Tumra name kyaa hai")
+    }
+    trait Surya extends Ajeet{
+      println("mera name surya hai kio kyaa huaa ")
+    }
+    trait Ajit extends Surya{
+      println("kuchh nhi bs usi trah se puch rahe the ")
+    }
+    class Surya1 extends Ajit {
+      println("Ok")
+    }
+    val p=new Surya1()
+    
 
 
   }
