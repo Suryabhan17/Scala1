@@ -641,6 +641,367 @@ Result()
   val c= for (i <- List(a) ; j <- List(b) ) yield (i + j)
 
     println(c)
+<<<<<<< HEAD
+=======
+
+     */
+
+    /*
+   class Student private() {
+     def Ab(x: Int, y: Int): Unit = println(x + y)
+   }
+     object Student {
+       private val a = new Student()
+
+       def getb(): Student = a
+
+
+   }
+    val p=Student.getb()
+      p.Ab(45,89)
+
+        */
+    /*
+    class Person private() {
+      def Ab(name: String , age : Int): Unit=println(s"Name : $name and Age : $age")
+    }
+        object Person {
+          private val a= new Person()
+          def getb():Person=a
+        }
+    val p=Person.getb()
+      p.Ab("Ajit",56)
+
+
+     */
+    /*
+    case class A(name: String, age: Int)
+    val p = new A("Surya", 45)
+    p match {
+      case A(s, y) => println(s"Name : $s and Age : $y")
+    }
+    val a = List(p.age, p.name)
+    println(a)
+
+    val t = List(
+      A("Surya1", 45),
+      A("Surya2", 48),
+      A("Surya3", 42),
+      A("Surya4", 41)
+    )
+    t.foreach {
+      case A(name, age) => println(s"Name : $name and Age : $age")
+    }
+
+    println(p.hashCode())
+
+       */
+    /*
+    trait Student {
+      def a(x:Int , y:Int): Unit=println(x+y)
+
+    }
+       class Person extends Student{
+         def b() : Unit=println("New Number")
+       }
+    val f=new Person()
+     f.a(1,1)
+     f.b()
+
+      */
+    /*
+    trait Greeting {
+      def sayHello(): Unit=println("sayHello")
+    }
+    class Person extends Greeting {
+      def a():Unit=println("hello")
+    }
+    val p=new Person()
+      p.sayHello()
+    p.a()
+
+       */
+    /*
+    trait Info {
+      val role : String="Developer"
+      def showRole( ) : Unit=println(role)
+    }
+     class Employee extends  Info{
+       def a(x:Int , y:Int): Unit=println(s"Total Developer ${x+y}")
+     }
+    val p=new Employee()
+    p.showRole()
+    p.a(4,8)
+
+        */
+    /*
+    trait A {
+      def a():Unit=println("A")
+    }
+    trait B {
+      def b() : Unit=println("B")
+    }
+    class C extends A with B {
+      def c() : Unit=println("C")
+    }
+    val p=new C()
+    p.a()
+    p.b()
+    p.c()
+
+        */
+    /*
+    trait Animal {
+      def sound() : Unit=println("Sound")
+    }
+    class Dog extends Animal{
+      override def sound(): Unit = println("Dog Sound")
+    }
+    val p=new Dog()
+    p.sound()
+
+         */
+    /*
+    trait Shape {
+      def area() : Double
+      def printName(): Unit=println("Shape")
+    }
+    class Circle(r:Double) extends  Shape{
+      def area(): Double = 3.14 * r * r
+    }
+    val p=new Circle(8)
+    p.printName()
+   // p.area()
+    println(p.area())
+
+     */
+    /*
+    case class A(name:String, age:Int)
+      val a=A("Surya",12)
+     val b=a.copy(age= 45)
+   println(b)
+    println(a)
+
+       */
+    /*
+    class A(name:String) {
+      def a(): Unit=println("A")
+    }
+  case class B(name:String) extends A(name) {
+      def ab() : Unit=println("B")
+
+    }
+      val p=new B("Surya")
+      println(p)
+      p.a()
+     p.ab()
+
+    */
+
+    /*
+    class A private () {
+      object A {
+        private val a=new A()
+        def getb : A=a
+      }
+      val p=A.getb
+      val p1=A.getb
+      println(p eq p1)
+
+    */
+
+
+    
+      /*
+   class Student(val name:String, val age:Int) {
+      def this(name:String) = this(name,45)
+      def this()=this("Unknown",458)
+    }
+    val p=new Student("Surya",45)
+    val p1=new Student("Surya")
+    val p3=new Student()
+    println(p.name, p.age)
+    println(p.name)
+    println(p3.name)
+
+       */
+             /*
+    class Person(val name: String , val age:Int)
+       object Person {
+         def unapply(p: Person): Option[(String, Int)] =
+           Some((p.name, p.age))
+
+       }
+
+
+    val t=new Person("Surya",25)
+     t match {
+       case Person(x , y) => println(s"Name : $x and Age : $y")
+       case _=> println("Not match the condition")
+     }
+
+              */
+    /*
+         class A(val a:Int , val b:Int)
+           object A{
+         def unapply(p: A ) : Option[(Int , Int)]=
+           Some((p.a ,p.b))
+    }
+
+     */
+
+/*
+
+    class Surya(val name: String, val age: Int)
+    object Surya {
+      def unapply(p:Surya) : Option[(String , Int)]=
+        Some((p.name , p.age))
+    }
+      val t=new Surya("Ajeet", 45)
+      t match {
+        case Surya( x , y) if (y>18) => println(s"Name  : $x and Age : $y")
+        case _=> println("Not Match the Condition")
+      }
+
+ */
+         /*
+    case class A(name: String , age:Int)
+      val p=A("Surya", 45)
+       val  k=List(
+         A("Surya1",45),
+         A("Surya1",89),
+         A("Surya3", 48)
+       )
+      val Y=  k.foreach{ case A(x , y)  => println(s"$x and $y")}
+    val a=k.filter(_.age < 58)
+    println(a)
+
+          */
+      /*
+       trait A {
+
+       def a( name:String):Unit=println(s"$name")
+       class B extends A {
+
+         def aa(age:Int) : Unit= println(age)
+       }
+     val p= new B()
+      println( p.a("Surya"))
+       p.aa(45)
+
+
+
+
+}
+
+
+       */
+
+      /*
+     class A(val name:String , val Age: Int)
+   class Ba( a:String ,  b:Int , name:String , Age: Int) extends A(name , Age)
+        val p=new  A("Surya",56)
+         val g=new Ba("Surya1" ,89, "Surya5", 78)
+         println(g.name)
+        println(p.name)
+
+       */
+    /*
+    class A(val name:String,val age:Int)
+    object A {
+      def unapply(p:A) : Option[(String , Int)]=
+        Some((p.name , p.age))
+    }
+     val t=new A("Surya", 45)
+     t match {
+       case A(x, y) => println(s"Name : $x and Age : $y")
+     }
+
+     */
+    /*
+    sealed trait A
+    case class Card(number:String) extends A
+    case class Case(amount: Int) extends  A
+    case class UPI() extends A
+    def B(p : A) : Unit= p match {
+      case Card(r) => println(r)
+      case Case(y)=> println(y)
+      case UPI() => println()
+    }
+     B(Card("458213"))
+     B(Case(4589))
+
+
+     */
+
+      /*
+      trait A {
+        def sound(name:String): Unit=println(s"Name : $name")
+      }
+      trait B {
+        def Ab(age:Int):Unit=println(s"Age: age")
+      }
+    class C extends A with B{
+      def ab(city:String) : Unit=println(s"City : $city")
+    }
+    val p=new C()
+        p.sound("Surya")
+      p.ab("noida")
+    p.Ab(45)
+
+       */
+    /*
+    class A private() {
+        def ab(name:String): Unit=println(s"Name : $name")
+      }
+        object A {
+          private val a=new A()
+          def getb() : A = a
+        }
+    val p= A.getb()
+       p.ab("Suryabhan")
+
+     */
+     /*
+    case class S (name:String , age:Int)
+        val p= S("Surya",45)
+    println(p)
+         val s=List(p)
+    println(s)
+         val t=s.map(_. age >18)
+       println(t)
+
+      */
+       /*
+    case class T(age:Int)
+    val p=T(45)
+    println(p)
+    val t=p.copy(89)
+    println(t)  
+    
+        */
+       /*
+    class A private(val name:String , val age: Int) {
+        def a(name:String , age: String) : Unit=println(s"Name : $name and Age : $age")
+      }
+         object A {
+           def aa(name:String , age : Int) : A = new A(name , age)
+         }
+       val t=new A("Surya" , 12)
+       t.a()
+        val p= A.aa("Surya" , 45)
+         println(p.name +" and " + p.age)  
+         
+        */
+      class A protected(val name: String , val age: Int) {
+        def a() : Unit = println (s"Surya")
+      }       
+       object  A {
+            def av(name:String , age: Int) : A=new A(name , age)
+       }
+           val p=A.av("Surya" , 25)
+       println(p.name + " and " + p.age)
+>>>>>>> new3
   }
 
 
