@@ -636,13 +636,13 @@ Result()
 
 
      */
+    /*
     val a =45
     val b =45
   val c= for (i <- List(a) ; j <- List(b) ) yield (i + j)
 
     println(c)
-<<<<<<< HEAD
-=======
+
 
      */
 
@@ -1001,7 +1001,6 @@ Result()
        }
            val p=A.av("Surya" , 25)
        println(p.name + " and " + p.age)
->>>>>>> new3
   }
 
 
