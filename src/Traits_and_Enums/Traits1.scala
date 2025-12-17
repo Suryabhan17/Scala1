@@ -232,11 +232,11 @@ object Traits1 {
        override def a() : Unit=println("Surya2")
        super.a()
      }
-      val p=new C()  
-      
+      val p=new C()
+
       */
     /*
-    case class A(name : String , age : Int) 
+    case class A(name : String , age : Int)
     val p=A("surya", 25)
       p match {
         case A( a ,b ) => println(b)
@@ -244,8 +244,8 @@ object Traits1 {
      val d=List(A("Surya" , 2),
        A("Suryabhan" , 8)
      )
-    println(d)  
-    
+    println(d)
+
      */
     /*
     class A(val name:String , val age: Int) {
@@ -257,8 +257,8 @@ object Traits1 {
     val t=new A("S" , 56)
     println(t.name + " and " + t.age)
     val p=new B("Surya1",25)
-    println(p.age)   
-     
+    println(p.age)
+
      */
       /*
     trait A {
@@ -273,11 +273,11 @@ object Traits1 {
     class D extends C {
       println("D")
     }
-    val p=new D()  
-    
+    val p=new D()
+
        */
-    
-    
+
+    /*
     trait Ajeet {
       println("mera name  ajeet hai \n Tumra name kyaa hai")
     }
@@ -291,8 +291,67 @@ object Traits1 {
       println("Ok")
     }
     val p=new Surya1()
-    
 
+     */
+/*
+class  A {
+  def a() : Unit =println("a")
+  def b() : Unit=println("b")
+  def walkThenRun(): Unit=
+    a()
+    b()
+
+}
+    val p=new A()
+    p.walkThenRun()
+
+ */
+    /*
+    class A {
+      private def a() : Unit=println("a")
+      def b() : Unit =a()
+    }
+    val p=new A()
+      p.b()
+
+     */
+      /*
+    trait Animal {
+      val b:String
+
+      def a() : Unit
+    }
+    class  B extends Animal {
+      val b="Surya"
+      println(b)
+      def a() : Unit=println("B")
+    }
+    val p=new B()
+      p.a()  
+      
+       */  
+    
+    trait A {
+      def a() : Unit = println("My name is Surya")
+    }
+    trait  B {
+      def b() : Unit = println("My last name is Singh")
+    }
+    trait C {
+      def c() : Unit = println("My village is jhanga")
+    }
+     class D extends A with B with C  {
+       def walkThenRun() : Unit= {
+         println("WalkThenRun method")
+         a()
+         b()
+         c()
+       }
+       
+     } 
+     
+val p=new D()
+  p.walkThenRun()
 
   }
 
